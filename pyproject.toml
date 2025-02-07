@@ -9,6 +9,15 @@ include = ["eomaps", "eomaps.scripts", "eomaps.qtcompanion", "eomaps.qtcompanion
 eomaps = ["logo.png", "NE_features.json", "qtcompanion/icons/*"]
 
 
+
+[tool.ruff]
+src = ["src"]
+line-length = 88
+
+[tool.ruff.lint]
+select = []
+ignore = ["PLR2004", "SIM108", "PLR0912"]
+
 [project]
 name = "eomaps"
 version = "8.3.1"
@@ -87,6 +96,11 @@ eomaps = "eomaps.scripts.open:cli"
 [project.urls]
 Documentation = "https://eomaps.readthedocs.io/"
 Repository = "https://github.com/raphaelquast/eomaps"
+
+[dependency-groups]
+dev = [
+    "ruff",
+]
 
 [tool.pytest.ini_options]
 mpl-use-full-test-name = "True"
